@@ -39,21 +39,23 @@ export default function AlbumViewPage(props: any) {
   if (!album) return null
 
   return (
-    <div data-site-layout className="flex flex-col">
-      <main className="flex flex-col grow">
-        <Header />
-        <Hero name={album.name} releaseYear={album.release_year} />
-        <section className="flex flex-col gap-10">
-          <div className="flex max-sm:flex-col gap-4">
-            <img src={album?.cover_image_url} alt="Capa do Álbum" className="w-80 h-80 max-sm:self-center" />
-            <Playlist/>
-          </div>
-          <div className="flex max-sm:flex-col items-center sm:gap-4">
-            <button onClick={handleDeleteAlbum} className="w-full sm:w-fit bg-white border px-4 py-2 text-red-500 rounded-md hover:bg-red-500 hover:text-white">Excluir Album</button>
-          </div>
-        </section>
+    <div className="flex flex-col overflow-y-auto">
+      <main data-site-layout className="flex flex-col gap-10">
+        <div className="flex flex-col grow gap-10">
+          <Header />
+          <Hero name={album.name} releaseYear={album.release_year} />
+          <section className="flex flex-col gap-10">
+            <div className="flex max-sm:flex-col gap-4">
+              <img src={album?.cover_image_url} alt="Capa do Álbum" className="w-80 h-80 max-sm:self-center" />
+              <Playlist />
+            </div>
+            <div className="flex max-sm:flex-col items-center sm:gap-4">
+              <button onClick={handleDeleteAlbum} className="w-full sm:w-fit bg-white border px-4 py-2 text-red-500 rounded-md hover:bg-red-500 hover:text-white">Excluir Album</button>
+            </div>
+          </section>
+        </div>
+        <Footer />
       </main>
-      <Footer />
     </div>
   )
 }

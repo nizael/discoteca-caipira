@@ -24,12 +24,14 @@ export default function HomePage() {
   return (
     <>
       <Search />
-      <div data-site-layout className="flex flex-col">
-        <main className="flex flex-col grow gap-10">
-          <Header />
-          <Hero />
-          <Emphasis />
-          <Discography />
+      <div className="flex flex-col overflow-y-auto">
+        <main data-site-layout className="flex flex-col gap-10">
+          <div className="flex flex-col grow gap-10">
+            <Header />
+            <Hero />
+            <Emphasis />
+            <Discography />
+          </div>
           <Footer />
         </main>
       </div>

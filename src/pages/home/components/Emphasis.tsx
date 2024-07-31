@@ -20,7 +20,7 @@ export const Emphasis = () => {
   return (
     <section className="flex flex-col gap-6 max-sm:items-center">
       <h2 className="text-2xl font-bold">Destaque</h2>
-      <AlbumCard name={emphasis.name} releaseYear={emphasis.release_year} />
+      <AlbumCard name={emphasis.name} releaseYear={emphasis.release_year} id={emphasis.id}/>
     </section>
   )
 }
