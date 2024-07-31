@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useAlbumStore } from "./stores/useAlbumStore";
 import { Header } from "../../common/components/Header";
+import { Search } from "./components/Search";
 
 export default function HomePage() {
   const { setAlbums } = useAlbumStore()
@@ -21,14 +22,17 @@ export default function HomePage() {
     })()
   }, [])
   return (
-    <div data-site-layout className="flex flex-col">
-      <main className="flex flex-col grow gap-10">
-        <Header />
-        <Hero />
-        <Emphasis />
-        <Discography />
-        <Footer />
-      </main>
-    </div>
+    <>
+      <Search />
+      <div data-site-layout className="flex flex-col">
+        <main className="flex flex-col grow gap-10">
+          <Header />
+          <Hero />
+          <Emphasis />
+          <Discography />
+          <Footer />
+        </main>
+      </div>
+    </>
   );
 }
